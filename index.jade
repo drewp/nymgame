@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    script(src="bower_components/platform/platform.js")
+    meta(name="viewport", content="width=device-width, user-scalable=no")
+    meta(name="mobile-web-app-capable", content="yes")
+    link(rel="shortcut icon", sizes="196x196", href="/icon.png")
+    link(rel="import", href="word-game.html")
+
+    style.
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+      }
+      button {
+        min-height: 2cm;
+        min-width: 2cm;
+        padding: 0 1cm;
+        font-size: 30px;
+      }
+  body
+    word-game()
+  
+    script(src="//bigasterisk.com/lib/underscore-1.5.2.min.js")
+    script(src="synpaths.json")
+    script(src="game.js")

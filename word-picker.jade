@@ -1,0 +1,31 @@
+link(rel="import", href="bower_components/polymer/polymer.html")
+
+polymer-element(name="word-picker")
+  style.
+    .selected {
+      outline: 2px solid black;
+      background: rgb(255, 168, 168);
+    }
+    li {
+      display: inline;
+      outline: 1px solid rgb(221, 221, 221);
+      margin: 4px;
+      padding: 3px;
+      background: rgb(241, 241, 241);
+    }
+  template
+    div
+      hr
+      | Synonyms for 
+      b {{word}}
+      ol
+        template(repeat="{{w in choices}}")
+          li(class="{{w == pick ? 'selected' : ''}}",
+             choice="{{w}}",
+             on-click="{{clickItem}}")
+            | {{w}} 
+
+  script(src="synpaths.json")
+  script(src="//bigasterisk.com/lib/underscore-1.5.2.min.js")
+  script(src="word-picker.js")
+  

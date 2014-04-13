@@ -1,0 +1,19 @@
+link(rel="import", href="bower_components/polymer/polymer.html")
+link(rel="import", href="word-picker.html")
+
+polymer-element(name="word-game")
+  style.
+    div {}
+  template
+    div
+      div
+        | Start with "{{first}}"
+      div#steps
+        template(repeat="{{row in stepRows}}")
+          word-picker(id="{{row.id}}",
+                      drives="{{row.drives}}",
+                      word="{{row.word}}")
+      hr
+      div
+        | End with "{{last}}"
+  script(src="word-game.js")
